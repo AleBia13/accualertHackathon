@@ -1,5 +1,8 @@
 from ._anvil_designer import FrameTemplate
 from anvil import *
+import anvil.facebook.auth
+import anvil.google.auth, anvil.google.drive
+from anvil.google.drive import app_files
 import anvil.server
 import anvil.users
 import anvil.tables as tables
@@ -7,7 +10,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..Reports import Reports
 from ..Sales import Sales
-from ..TestPage import TestPage 
+from ..GetData import GetData 
 
 #This is your startup form. It has a sidebar with navigation links and a content panel where page content will be added.
 class Frame(FrameTemplate):
@@ -53,10 +56,10 @@ class Frame(FrameTemplate):
     """This method is called when the Label is shown on the screen"""
     pass
 
-  def button_1_click(self, **event_args):
+  def weartherForecast_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.content_panel.clear()
-    self.content_panel.add_component(TestPage())
+    self.content_panel.add_component(GetData())
     pass
 
 

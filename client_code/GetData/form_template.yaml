@@ -1,0 +1,38 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '', visible: true}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: label_1
+    properties: {text: 'Enter location:
+
+        '}
+    type: Label
+    layout_properties: {grid_position: 'AUVWXP,ZTEWPT'}
+  - name: addressLabel
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'URZCUO,COKQSR'}
+    event_bindings: {pressed_enter: addressLabel_pressed_enter}
+    data_bindings:
+    - {property: placeholder, code: '', writeback: false}
+  - name: LoadColab
+    properties: {text: Get Forecast, border: '', align: left}
+    type: Button
+    layout_properties: {grid_position: 'ODGXXY,ITDLUY'}
+    event_bindings: {click: LoadColab_click}
+  - name: column_panel_1
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'KWBJST,PPQZRU'}
+    components:
+    - name: googleMap
+      properties: {height: '300'}
+      type: GoogleMap
+      layout_properties: {grid_position: 'PBBCAR,CKCBZY'}
+data_bindings: []
