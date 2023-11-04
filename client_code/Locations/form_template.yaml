@@ -47,11 +47,12 @@ components:
         - {id: OFHUMZ, data_key: Address, title: Address}
         - {id: UGGBNA, data_key: Latitude, title: Latitude}
         - {id: XOKLSG, data_key: Longitude, title: Longitude}
+        - {id: BXOWNJ, data_key: column_1, title: Delete}
         auto_header: true
         tooltip: ''
         border: ''
         foreground: ''
-        rows_per_page: 20
+        rows_per_page: 19
         visible: true
         wrap_on: never
         show_page_controls: true
@@ -62,10 +63,15 @@ components:
       layout_properties: {grid_position: 'IZDBPZ,LYWXJH'}
       components:
       - name: repeating_panel_locations
-        properties: {spacing_above: none, spacing_below: none, item_template: Frame.RowTemplate1}
+        properties: {spacing_above: none, spacing_below: none, item_template: Locations.RowTemplate2}
         type: RepeatingPanel
         layout_properties: {}
         data_bindings: []
       data_bindings:
       - {property: tag, code: '', writeback: false}
+  - name: card_1
+    properties: {role: card, spacing_above: large}
+    type: ColumnPanel
+    layout_properties: {}
+    components: []
 is_package: true

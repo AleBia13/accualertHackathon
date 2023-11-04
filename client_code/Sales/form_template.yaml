@@ -133,7 +133,7 @@ components:
   - type: ColumnPanel
     properties: {role: card, col_widths: '{}'}
     name: card_6
-    layout_properties: {grid_position: 'ZWYAMV,QWVFNP'}
+    layout_properties: {grid_position: 'ZWYAMV,QWVFNP EBCEMW,PQXDYS'}
     components:
     - type: Label
       properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
@@ -142,31 +142,18 @@ components:
         underline: false, icon: ''}
       name: label_15
       layout_properties: {grid_position: 'ZCOOLF,ZNQHMJ'}
-    - type: DataGrid
+    - name: data_grid_1
       properties:
-        role: null
         columns:
-        - {id: KJILYV, title: Filename, data_key: filename, $$hashKey: 'object:16742'}
-        - {id: VSSQIK, title: Author, data_key: author, $$hashKey: 'object:16743'}
-        - {id: KXESPC, title: Created, data_key: created, $$hashKey: 'object:16744'}
-        auto_header: true
-        tooltip: ''
-        border: ''
-        foreground: ''
-        rows_per_page: 20
-        visible: true
-        wrap_on: never
-        show_page_controls: true
-        spacing_above: small
-        spacing_below: small
-        background: ''
-      name: data_grid_1
-      layout_properties: {grid_position: 'IZDBPZ,LYWXJH'}
+        - {id: MEKCOS, data_key: filename, title: filename}
+        - {id: KAOZJB, data_key: author, title: author}
+        - {id: CQYVAE, data_key: created, title: created}
+      type: DataGrid
       components:
-      - type: RepeatingPanel
-        properties: {spacing_above: none, spacing_below: none, item_template: Frame.RowTemplate1}
-        name: repeating_panel_1
-        layout_properties: {}
+      - name: repeating_panel_1
+        properties: {item_template: Sales.RowTemplate6}
+        type: RepeatingPanel
+      layout_properties: {grid_position: 'RIVDFD,UTORUP'}
   - type: ColumnPanel
     properties: {role: card, col_widths: '{"VVWOID":20,"EQOCFH":40}'}
     name: card_7

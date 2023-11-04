@@ -37,6 +37,14 @@ def return_data(year):
     ]
 
 @anvil.server.callable
+def delete_location(location):
+  if app_tables.locations.has_row(location):
+        location.delete()
+  else:
+      raise Exception("Location does not exist")
+  print("Completed")
+
+@anvil.server.callable
 def return_bar_charts():
   #You can use any Python plotting library on the server including Plotly Express, MatplotLib, Seaborn, Bokeh
   fig = go.Figure(
@@ -59,7 +67,8 @@ def return_bar_charts():
 @anvil.server.callable
 def get_locations():
   return app_tables.locations.search()
-  
+
+
   fig.update_layout(
     barmode="stack",
   )

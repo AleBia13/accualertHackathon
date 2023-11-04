@@ -1,0 +1,8 @@
+is_package: true
+container: {type: DataRowPanel}
+components:
+- name: deleteButton
+  properties: {text: DELETE}
+  type: Button
+  layout_properties: {column: BXOWNJ}
+  event_bindings: {click: deleteButton_click}

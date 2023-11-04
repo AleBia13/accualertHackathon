@@ -19,18 +19,22 @@ class Locations(LocationsTemplate):
 
   def add_location_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    isFound = app_tables.locations.get(Name=str(self.text_box_1.text))
-    items =  self.repeating_panel_locations.items
-    if isFound is None :
-         row = app_tables.locations.add_row(Name=str(self.text_box_1.text),
-                                   Address=str(self.text_box_2.text),
-                                           Latitude = 0,
-                                           Longitude= 0)
+    print(self.text_box_1.text)
+    if(str(self.text_box_1.text) != "" and (self.text_box_2.text) != ""):
+        isFound = app_tables.locations.get(Name=str(self.text_box_1.text))
+        items =  self.repeating_panel_locations.items
+        if isFound is None :
+            row = app_tables.locations.add_row(Name=str(self.text_box_1.text),
+                                      Address=str(self.text_box_2.text),
+                                              Latitude = 0,
+                                              Longitude= 0)
+        else:
+              alert("Location is already in the database", title="An error has occurred")
+        isAdded = app_tables.locations.get(Name=str(self.text_box_1.text))
+        if isAdded is not None:
+          self.repeating_panel_locations.items = anvil.server.call('get_locations')
+        else:
+          alert("Cannot add location", title="An error has occurred")
     else:
-          alert("Already in database", title="An error has occurred")
-    isAdded = app_tables.locations.get(Name=str(self.text_box_1.text))
-    if isAdded is not None:
-       self.repeating_panel_locations.item += row
-    else:
-      alert("Cannot add location", title="An error has occurred")
+     alert("Please enter all values", title="An error has occurred")
     pass
