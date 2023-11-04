@@ -28,5 +28,6 @@ class Locations(LocationsTemplate):
     else:
           alert("Cannot add location", title="An error has occurred")
     isAdded = app_tables.locations.get(Name=str(self.text_box_1.text))
+    row.update(name=str(self.text_box_1.text))
     print(isAdded)
     pass
