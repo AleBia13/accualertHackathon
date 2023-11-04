@@ -22,7 +22,9 @@ class Locations(LocationsTemplate):
     isFound = app_tables.locations.get(Name=self.text_box_1.text)
     if isFound is not None :
          row = app_tables.locations.add_row(Name=self.text_box_1.text,
-                                Address=self.text_box_2.text,
+                                   Address=self.text_box_2.text,
                                            Latitude = 0,
                                            Longitude= 0)
+    else:
+          alert("error", title="An error has occurred")
     pass
