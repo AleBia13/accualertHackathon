@@ -69,9 +69,4 @@ components:
         data_bindings: []
       data_bindings:
       - {property: tag, code: '', writeback: false}
-  - name: card_1
-    properties: {role: card, spacing_above: large}
-    type: ColumnPanel
-    layout_properties: {}
-    components: []
 is_package: true
