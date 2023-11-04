@@ -19,13 +19,14 @@ class Locations(LocationsTemplate):
 
   def add_location_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    isFound = app_tables.locations.get(Name=self.text_box_1.text)
-    print(isFound)
-    if isFound is not None :
-         row = app_tables.locations.add_row(Name=self.text_box_1.text,
-                                   Address=self.text_box_2.text,
+    isFound = app_tables.locations.get(Name=str(self.text_box_1.text))
+    if isFound is None :
+         row = app_tables.locations.add_row(Name=str(self.text_box_1.text),
+                                   Address=str(self.text_box_2.text),
                                            Latitude = 0,
                                            Longitude= 0)
     else:
-          alert("error", title="An error has occurred")
+          alert("Cannot add location", title="An error has occurred")
+    isAdded = app_tables.locations.get(Name=str(self.text_box_1.text))
+    print(isAdded)
     pass
