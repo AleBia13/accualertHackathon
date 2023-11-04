@@ -15,19 +15,22 @@ class Locations(LocationsTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     # Any code you write here will run before the form opens.
-    self.repeating_panel_locations.items = anvil.server.call('get_locations')
+    self.repeating_panel_locations.items = anvil.server.call('get_locations') 
 
   def add_location_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     isFound = app_tables.locations.get(Name=str(self.text_box_1.text))
+    items =  self.repeating_panel_locations.items
     if isFound is None :
          row = app_tables.locations.add_row(Name=str(self.text_box_1.text),
                                    Address=str(self.text_box_2.text),
                                            Latitude = 0,
                                            Longitude= 0)
     else:
-          alert("Cannot add location", title="An error has occurred")
+          alert("Already in database", title="An error has occurred")
     isAdded = app_tables.locations.get(Name=str(self.text_box_1.text))
-    row.update(name=str(self.text_box_1.text))
-    print(isAdded)
+    if isAdded is not None:
+       self.repeating_panel_locations.item += row
+    else:
+      alert("Cannot add location", title="An error has occurred")
     pass

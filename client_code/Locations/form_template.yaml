@@ -65,6 +65,7 @@ components:
         properties: {spacing_above: none, spacing_below: none, item_template: Frame.RowTemplate1}
         type: RepeatingPanel
         layout_properties: {}
+        data_bindings: []
       data_bindings:
       - {property: tag, code: '', writeback: false}
 is_package: true
