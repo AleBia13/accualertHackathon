@@ -55,7 +55,11 @@ def return_bar_charts():
       ),
     ]
   )
-
+  
+@anvil.server.callable
+def get_locations():
+  return app_tables.locations.search()
+  
   fig.update_layout(
     barmode="stack",
   )

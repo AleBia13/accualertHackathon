@@ -15,6 +15,7 @@ class GetData(GetDataTemplate):
     self.init_components(**properties)
     self.googleMap.center = GoogleMap.LatLng(45.9442858,25.0094303)
     self.googleMap.zoom = 5
+    self.locationDropdown.items = [(row["Name"], row) for row in app_tables.locations.search()]
     # Any code you write here will run before the form opens.
 
   def LoadColab_click(self, **event_args):

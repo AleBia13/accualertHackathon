@@ -11,6 +11,8 @@ from anvil.tables import app_tables
 from ..Reports import Reports
 from ..Sales import Sales
 from ..GetData import GetData 
+from ..Locations import Locations 
+
 
 #This is your startup form. It has a sidebar with navigation links and a content panel where page content will be added.
 class Frame(FrameTemplate):
@@ -62,6 +64,11 @@ class Frame(FrameTemplate):
     self.content_panel.add_component(GetData())
     pass
 
+  def locations_page_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.content_panel.clear()
+    self.content_panel.add_component(Locations())
+    pass
 
 
 
