@@ -62,3 +62,4 @@ db_schema:
       admin_ui: {order: 3, width: 200}
       type: datetime
     title: Files
+uplink_visible: true

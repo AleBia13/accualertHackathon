@@ -12,3 +12,16 @@ class TestPage(TestPageTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  def LoadColab_click(self, **event_args):
+    """This method is called when the button is clicked"""
+       # Call the google colab function and pass it the iris measurements
+       iris_category = anvil.server.call('predict_iris', 
+                                self.sepal_length.text,
+                                self.sepal_width.text,
+                                self.petal_length.text,
+                                self.petal_width.text)
+    # If a category is returned set our species 
+       if iris_category:
+        self.label_1.visible = True
+        self.label_1.text = "The species is " + iris_category
