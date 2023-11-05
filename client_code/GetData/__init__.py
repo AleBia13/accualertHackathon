@@ -21,10 +21,8 @@ class GetData(GetDataTemplate):
   def LoadColab_click(self, **event_args):
     """This method is called when the button is clicked"""
      # Call the google colab function and pass it the iris measurements
-    soilTemperature = anvil.server.call('get_SoilTemperature')
+    self.soilTempImg.visible = true
     # If a category is returned set our species 
-    print(soilTemperature)
-
   def addressLabel_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
     address = self.text_box_1.text

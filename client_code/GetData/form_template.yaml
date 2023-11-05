@@ -40,10 +40,12 @@ components:
     type: ColumnPanel
     layout_properties: {grid_position: 'CJXCHH,ISCMJG'}
     components:
-    - name: image_1
-      properties: {source: _/theme/demobar.png, horizontal_align: left, display_mode: original_size}
+    - name: soilTempImg
+      properties: {source: _/theme/demobar.png, horizontal_align: left, display_mode: original_size,
+        visible: true}
       type: Image
       layout_properties: {grid_position: 'LWYMEP,LXGVOW'}
+      data_bindings: []
   - name: column_panel_1
     properties: {}
     type: ColumnPanel
