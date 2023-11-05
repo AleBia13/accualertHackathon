@@ -57,16 +57,19 @@ db_schema:
     client: none
     server: full
     columns:
-    - name: filename
+    - name: Product
       admin_ui: {order: 0, width: 200}
       type: string
-    - name: author
-      admin_ui: {order: 2, width: 200}
+    - name: Client
+      admin_ui: {order: 1.5, width: 200}
       type: link_single
       target: users
     - name: created
       admin_ui: {order: 3, width: 200}
       type: datetime
+    - name: Quantity
+      admin_ui: {width: 200, order: 2.25}
+      type: number
     title: Files
   locations:
     client: full

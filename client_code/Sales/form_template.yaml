@@ -137,7 +137,7 @@ components:
     components:
     - type: Label
       properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
-        visible: true, text: Files, font_size: null, font: '', spacing_above: small,
+        visible: true, text: Orders, font_size: null, font: '', spacing_above: small,
         icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
         underline: false, icon: ''}
       name: label_15
@@ -145,9 +145,10 @@ components:
     - name: data_grid_1
       properties:
         columns:
-        - {id: MEKCOS, data_key: filename, title: filename}
-        - {id: KAOZJB, data_key: author, title: author}
-        - {id: CQYVAE, data_key: created, title: created}
+        - {id: VVNHDO, data_key: Product, title: Product}
+        - {id: ZZDOBO, data_key: Client, title: Client, width: 90, expand: false}
+        - {id: IXMPNA, data_key: Quantity, title: Quantity, width: 74, expand: false}
+        - {id: PJXIOK, data_key: created, title: created, width: 101, expand: false}
       type: DataGrid
       components:
       - name: repeating_panel_1
