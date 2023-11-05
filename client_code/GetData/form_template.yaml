@@ -35,6 +35,15 @@ components:
     type: Button
     layout_properties: {grid_position: 'ODGXXY,ITDLUY'}
     event_bindings: {click: LoadColab_click}
+  - name: column_panel_2
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'CJXCHH,ISCMJG'}
+    components:
+    - name: image_1
+      properties: {source: _/theme/demobar.png, horizontal_align: left, display_mode: original_size}
+      type: Image
+      layout_properties: {grid_position: 'LWYMEP,LXGVOW'}
   - name: column_panel_1
     properties: {}
     type: ColumnPanel
