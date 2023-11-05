@@ -15,9 +15,9 @@ services:
   client_config: {}
   server_config: {}
 startup: {type: form, module: Frame}
-package_name: Dashboard_Template_A
+package_name: AccuAlert
 allow_embedding: false
-name: Dashboard Template A
+name: AccuAlert
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null, preview_v3: true}
 startup_form: null
@@ -57,16 +57,19 @@ db_schema:
     client: none
     server: full
     columns:
-    - name: filename
+    - name: Product
       admin_ui: {order: 0, width: 200}
       type: string
-    - name: author
-      admin_ui: {order: 2, width: 200}
+    - name: Client
+      admin_ui: {order: 1.5, width: 200}
       type: link_single
       target: users
     - name: created
       admin_ui: {order: 3, width: 200}
       type: datetime
+    - name: Quantity
+      admin_ui: {width: 200, order: 2.25}
+      type: number
     title: Files
   locations:
     client: full
